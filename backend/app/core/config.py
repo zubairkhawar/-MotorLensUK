@@ -14,8 +14,9 @@ class Settings(BaseSettings):
     app_name: str = "MotorLens UK"
     database_url: str = f"sqlite:///{DATA_DIR / 'auto_intel.db'}"
     cors_origins: list[str] = ["http://localhost:3000"]
-    scrape_delay_seconds: float = 2.0
-    max_pages_per_source: int = 5
+    scrape_delay_seconds: float = 1.0
+    max_pages_per_source: int = 2
+    scrapingbee_api_key: str | None = None
     user_agent: str = (
         "UK-Auto-Intel-Research/1.0 (Academic project; contact: student@example.com)"
     )

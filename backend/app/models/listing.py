@@ -24,5 +24,6 @@ class Listing(Base):
     location: Mapped[str | None] = mapped_column(String(128), nullable=True)
     region: Mapped[str | None] = mapped_column(String(64), index=True, nullable=True)
     url: Mapped[str | None] = mapped_column(String(1024), nullable=True)
+    image_url: Mapped[str | None] = mapped_column(String(1024), nullable=True)
     is_cleaned: Mapped[bool] = mapped_column(Boolean, default=False)
     scraped_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)

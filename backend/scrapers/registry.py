@@ -1,10 +1,10 @@
 from scrapers.bs4_autotrader import AutotraderScraper
-from scrapers.playwright_cargurus import CarGurusScraper
-from scrapers.requests_motors import MotorsScraper
+from scrapers.playwright_cinch import CinchScraper
+from scrapers.requests_heycar import HeycarScraper
 
 
 SCRAPERS = {
     "autotrader": AutotraderScraper,
-    "cargurus": CarGurusScraper,
-    "motors": MotorsScraper,
+    "cinch": CinchScraper,
+    "heycar": HeycarScraper,
 }

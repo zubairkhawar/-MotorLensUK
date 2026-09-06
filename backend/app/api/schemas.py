@@ -16,6 +16,7 @@ class ListingOut(BaseModel):
     location: str | None
     region: str | None
     url: str | None
+    image_url: str | None
     is_cleaned: bool
     scraped_at: datetime
 

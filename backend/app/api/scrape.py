@@ -52,6 +52,7 @@ def _run_scraper(job_id: int, source: str, max_pages: int):
                 location=row.get("location"),
                 region=row.get("region"),
                 url=row.get("url"),
+                image_url=row.get("image_url"),
                 is_cleaned=False,
             )
             db.add(listing)

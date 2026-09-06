@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, Download, Sparkles, BarChart3, ShieldCheck, Table } from "lucide-react";
+import { LayoutDashboard, Download, Sparkles, BarChart3, Table } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Logo } from "./Logo";
 
@@ -11,7 +11,6 @@ const nav = [
   { href: "/listings", label: "Listings", icon: Table },
   { href: "/cleaning", label: "Cleaning", icon: Sparkles },
   { href: "/eda", label: "EDA", icon: BarChart3 },
-  { href: "/ethics", label: "Ethics", icon: ShieldCheck },
 ];
 
 export default function Sidebar() {

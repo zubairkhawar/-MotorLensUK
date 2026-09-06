@@ -9,7 +9,13 @@ venv/
 node_modules/
 .next/
 out/
+
+# Secrets — never commit .env files
+.env
 .env.local
+.env.*.local
+!.env.example
+!.env.local.example
 
 # Data
 data/*.db

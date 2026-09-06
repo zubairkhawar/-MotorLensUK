@@ -47,9 +47,6 @@ export const api = {
   edaRegional: () => req<{ region: string; mean: number; median: number; count: number }[]>("/eda/regional-prices"),
   edaPriceByMake: () => req<any[]>("/eda/price-by-make"),
 
-  ethicsPolicy: () => req<any>("/ethics/policy"),
-  ethicsRobots: () => req<any[]>("/ethics/robots"),
-
   edaSentiment: () => req<any>("/eda/sentiment"),
 
   seed: () => req<any>("/seed/", { method: "POST" }),
