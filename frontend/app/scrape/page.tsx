@@ -47,25 +47,8 @@ export default function ScrapePage() {
   return (
     <div className="space-y-8">
       <PageHeader
-        eyebrow="Data Collection"
         title="Scrape Console"
         description="Three UK automotive sources, three scraping tools. Trigger jobs individually and watch progress in real time."
-        action={
-          <>
-            <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-lg px-3 py-2">
-              <label className="text-xs text-ink-400">Pages</label>
-              <input
-                type="number" min={1} max={20}
-                value={pages}
-                onChange={(e) => setPages(parseInt(e.target.value || "1"))}
-                className="w-14 bg-transparent text-sm font-semibold text-white outline-none tabular-nums"
-              />
-            </div>
-            <button onClick={refresh} className="btn-secondary">
-              <RefreshCw size={14} /> Refresh
-            </button>
-          </>
-        }
       />
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
