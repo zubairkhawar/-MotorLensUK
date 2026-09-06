@@ -22,7 +22,6 @@ export default function Sidebar() {
         <Logo size={40} />
         <div>
           <div className="font-bold text-white leading-tight tracking-tight">MotorLens UK</div>
-          <div className="text-[10px] text-ink-400 uppercase tracking-widest mt-0.5">DAT7403 · P2</div>
         </div>
       </div>
 

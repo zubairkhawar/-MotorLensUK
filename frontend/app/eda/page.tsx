@@ -13,10 +13,12 @@ import {
 const COLORS = ["#3b6cf7", "#a855f7", "#ec4899", "#22c55e", "#f59e0b", "#06b6d4", "#f43f5e"];
 
 const tooltipStyle = {
-  background: "rgba(10, 15, 30, 0.95)",
-  border: "1px solid rgba(255,255,255,0.08)",
+  background: "rgba(36, 50, 88, 0.95)",
+  border: "1px solid rgba(255,255,255,0.15)",
   borderRadius: 12,
+  color: "#e6ecfa",
   backdropFilter: "blur(10px)",
+  boxShadow: "0 8px 32px rgba(0,0,0,0.4)",
 };
 
 export default function EDAPage() {

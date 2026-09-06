@@ -73,21 +73,9 @@ export default function Dashboard() {
   return (
     <div className="space-y-8">
       <PageHeader
-        eyebrow="DAT7403 · Portfolio 2"
         title="UK Automotive Market Intelligence"
-        description="Live scraping across three UK sources, cleaned with a reproducible pandas pipeline, then explored through interactive analytics."
+        description="Live scraping across UK automotive sources, cleaned with a reproducible pandas pipeline, then explored through interactive analytics."
         gradient
-        action={
-          <>
-            <button onClick={seed} disabled={seeding} className="btn-primary">
-              {seeding ? <RefreshCw size={14} className="animate-spin" /> : <Sparkles size={14} />}
-              {seeding ? "Seeding…" : "Load demo data"}
-            </button>
-            <button onClick={load} className="btn-secondary">
-              <RefreshCw size={14} /> Refresh
-            </button>
-          </>
-        }
       />
 
       {err && (
@@ -172,7 +160,7 @@ export default function Dashboard() {
                   <XAxis type="number" stroke="#8091b3" fontSize={11} />
                   <YAxis type="category" dataKey="label" stroke="#8091b3" fontSize={11} width={100} />
                   <Tooltip
-                    contentStyle={{ background: "#0a0f1e", border: "1px solid #1a2440", borderRadius: 12 }}
+                    contentStyle={{ background: "rgba(36, 50, 88, 0.95)", border: "1px solid rgba(255,255,255,0.15)", borderRadius: 12, color: "#e6ecfa", backdropFilter: "blur(10px)", boxShadow: "0 8px 32px rgba(0,0,0,0.4)" }}
                     cursor={{ fill: "rgba(255,255,255,0.03)" }}
                   />
                   <Bar dataKey="value" fill="url(#grad-brand)" radius={[0, 6, 6, 0]} />
@@ -190,7 +178,7 @@ export default function Dashboard() {
                   >
                     {fuelMix.map((_, i) => <Cell key={i} fill={COLORS[i % COLORS.length]} />)}
                   </Pie>
-                  <Tooltip contentStyle={{ background: "#0a0f1e", border: "1px solid #1a2440", borderRadius: 12 }} />
+                  <Tooltip contentStyle={{ background: "rgba(36, 50, 88, 0.95)", border: "1px solid rgba(255,255,255,0.15)", borderRadius: 12, color: "#e6ecfa", backdropFilter: "blur(10px)", boxShadow: "0 8px 32px rgba(0,0,0,0.4)" }} />
                   <Legend wrapperStyle={{ color: "#c8d0e4", fontSize: 12 }} />
                 </PieChart>
               </ResponsiveContainer>
@@ -207,7 +195,7 @@ export default function Dashboard() {
                     data={sentimentData} startAngle={90} endAngle={-270}
                   >
                     <RadialBar dataKey="value" cornerRadius={6} background={{ fill: "rgba(255,255,255,0.04)" }} />
-                    <Tooltip contentStyle={{ background: "#0a0f1e", border: "1px solid #1a2440", borderRadius: 12 }} />
+                    <Tooltip contentStyle={{ background: "rgba(36, 50, 88, 0.95)", border: "1px solid rgba(255,255,255,0.15)", borderRadius: 12, color: "#e6ecfa", backdropFilter: "blur(10px)", boxShadow: "0 8px 32px rgba(0,0,0,0.4)" }} />
                     <Legend
                       iconSize={10}
                       wrapperStyle={{ color: "#c8d0e4", fontSize: 11 }}
@@ -234,7 +222,7 @@ export default function Dashboard() {
                   <XAxis dataKey="region" stroke="#8091b3" fontSize={9} angle={-30} textAnchor="end" height={80} />
                   <YAxis stroke="#8091b3" fontSize={11} tickFormatter={(v) => `£${(v / 1000).toFixed(0)}k`} />
                   <Tooltip
-                    contentStyle={{ background: "#0a0f1e", border: "1px solid #1a2440", borderRadius: 12 }}
+                    contentStyle={{ background: "rgba(36, 50, 88, 0.95)", border: "1px solid rgba(255,255,255,0.15)", borderRadius: 12, color: "#e6ecfa", backdropFilter: "blur(10px)", boxShadow: "0 8px 32px rgba(0,0,0,0.4)" }}
                     formatter={(v: any) => fmtGBP(v)}
                     cursor={{ fill: "rgba(255,255,255,0.03)" }}
                   />
@@ -251,7 +239,7 @@ export default function Dashboard() {
                   <XAxis dataKey="source" stroke="#8091b3" fontSize={12} />
                   <YAxis stroke="#8091b3" fontSize={11} />
                   <Tooltip
-                    contentStyle={{ background: "#0a0f1e", border: "1px solid #1a2440", borderRadius: 12 }}
+                    contentStyle={{ background: "rgba(36, 50, 88, 0.95)", border: "1px solid rgba(255,255,255,0.15)", borderRadius: 12, color: "#e6ecfa", backdropFilter: "blur(10px)", boxShadow: "0 8px 32px rgba(0,0,0,0.4)" }}
                     cursor={{ fill: "rgba(255,255,255,0.03)" }}
                   />
                   <Bar dataKey="value" fill="#a855f7" radius={[6, 6, 0, 0]} />
