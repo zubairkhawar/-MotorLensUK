@@ -49,4 +49,8 @@ export const api = {
 
   ethicsPolicy: () => req<any>("/ethics/policy"),
   ethicsRobots: () => req<any[]>("/ethics/robots"),
+
+  edaSentiment: () => req<any>("/eda/sentiment"),
+
+  seed: () => req<any>("/seed/", { method: "POST" }),
 };
