@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,32 +9,106 @@
     color-scheme: dark;
   }
   html, body {
-    background: linear-gradient(180deg, #060a15 0%, #0b1220 100%);
+    background:
+      radial-gradient(1200px 800px at 10% -10%, #182449 0%, transparent 60%),
+      radial-gradient(1000px 700px at 90% 0%, #2b1a55 0%, transparent 55%),
+      linear-gradient(180deg, #0a0f1e 0%, #0e1428 100%);
+    background-attachment: fixed;
     color: #e6ecfa;
     min-height: 100vh;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
+  * { -webkit-font-smoothing: antialiased; }
+  ::selection { background: rgba(59, 108, 247, 0.4); color: white; }
 }
 
 @layer components {
+  .glass {
+    @apply bg-ink-800/40 backdrop-blur-xl border border-white/5 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.4)];
+  }
   .card {
-    @apply bg-ink-800/60 backdrop-blur border border-ink-700 rounded-2xl p-5 shadow-lg;
+    @apply glass rounded-2xl p-5 transition duration-300;
+  }
+  .card-hover {
+    @apply hover:border-white/10 hover:bg-ink-800/60 hover:-translate-y-0.5;
   }
   .btn {
-    @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg font-medium text-sm transition;
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg font-medium text-sm transition duration-200 select-none;
   }
   .btn-primary {
-    @apply btn bg-brand-500 hover:bg-brand-600 text-white;
+    @apply btn text-white shadow-[0_8px_30px_-8px_rgba(59,108,247,0.6)]
+           bg-gradient-to-b from-brand-500 to-brand-600
+           hover:from-brand-400 hover:to-brand-500 active:translate-y-px;
   }
   .btn-secondary {
-    @apply btn bg-ink-700 hover:bg-ink-800 text-ink-200 border border-ink-700;
+    @apply btn bg-white/5 hover:bg-white/10 text-ink-100 border border-white/10;
+  }
+  .btn-ghost {
+    @apply btn text-ink-300 hover:text-white hover:bg-white/5;
   }
   .stat-label {
-    @apply text-xs uppercase tracking-wider text-ink-400;
+    @apply text-[10px] uppercase tracking-[0.15em] text-ink-400 font-semibold;
   }
   .stat-value {
-    @apply text-2xl font-semibold text-white mt-1;
+    @apply text-3xl font-bold text-white mt-1.5 tracking-tight;
   }
   .badge {
-    @apply inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium;
+    @apply inline-flex items-center px-2 py-0.5 rounded-md text-[11px] font-semibold uppercase tracking-wider;
+  }
+  .hero-gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-brand-100 to-brand-500;
+  }
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .ring-focus {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500/60;
+  }
+  .divider {
+    @apply h-px bg-gradient-to-r from-transparent via-white/10 to-transparent;
+  }
+  .glow-orb {
+    position: fixed;
+    border-radius: 9999px;
+    filter: blur(80px);
+    opacity: 0.25;
+    pointer-events: none;
+    z-index: 0;
   }
 }
+
+@layer utilities {
+  .animate-fade-in { animation: fadeIn 0.5s ease-out; }
+  .animate-slide-up { animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+  .animate-shimmer {
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite linear;
+  }
+  .animate-pulse-glow { animation: pulseGlow 2.5s ease-in-out infinite; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(59, 108, 247, 0.5); }
+  50% { box-shadow: 0 0 30px 4px rgba(59, 108, 247, 0.35); }
+}
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.15); }
