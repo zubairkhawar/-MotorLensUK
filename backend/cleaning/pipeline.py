@@ -1,14 +1,4 @@
-"""Data cleaning pipeline: raw listings -> cleaned listings.
 
-Steps:
-1. Load raw (uncleaned) listings from DB
-2. Deduplicate on (source, external_id) and (make, model, year, mileage, price)
-3. Coerce types (year -> int, price -> float, mileage -> int)
-4. Standardise text fields (title-case makes, uppercase fuel enum)
-5. Impute region from location where missing
-6. Cap outliers on price and mileage (IQR method)
-7. Flag rows as cleaned and update in DB
-"""
 from __future__ import annotations
 import numpy as np
 import pandas as pd

@@ -1,8 +1,4 @@
-"""ScrapingBee client — real anti-bot bypass for UK car marketplaces.
 
-Handles the Cloudflare / DataDome / bot-detection layers that block direct
-scraping. Uses premium residential proxies + JS rendering + wait timers.
-"""
 from __future__ import annotations
 import os
 import requests

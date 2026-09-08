@@ -1,9 +1,4 @@
-"""AutoTrader UK scraper — real listings via ScrapingBee + BeautifulSoup.
 
-Uses ScrapingBee premium residential proxy + JS rendering + wait to defeat
-Cloudflare/anti-bot on autotrader.co.uk, then parses real listing cards.
-No synthetic fallback — returns [] if the fetch or parse fails.
-"""
 from __future__ import annotations
 import re
 from bs4 import BeautifulSoup

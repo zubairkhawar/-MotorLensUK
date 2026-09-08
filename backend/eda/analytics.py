@@ -1,8 +1,4 @@
-"""EDA analytics functions — pandas + numpy over cleaned Listings.
 
-Each function returns JSON-serialisable dicts consumable by the frontend
-(Recharts/Plotly). Statistical rigour: aggregates only, no ML.
-"""
 from __future__ import annotations
 from datetime import datetime
 import numpy as np
